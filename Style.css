@@ -1,0 +1,206 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:300|Crimson+Text);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Fate/TopMenu.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Fate/TabContent.css);
+@import url(https://dl.dropboxusercontent.com/u/78192465/MyAnimeList/Fate/CategoryMenu.css);
+
+/*
+HOW TO USE
+Use and COMPLETE this simple tutorial if you never installed CSS, it only takes a few minutes:
+http://myanimelist.net/forum/?topicid=200320
+  
+  
+When you're done with the tutorial and can see the starter layout on your list, copy and paste this entire page of codes (including this part and the codes above and below) 
+to your CSS edit box (the box titled Edit Advanced CSS File) replacing any other codes in the box. 
+Save with the blue button at the bottom. It will put this premade layout on your list instead of the starter one from the tutorial! 
+  
+  
+If the layout looks weird on your list after installing, you can try to alter your settings here.
+Common solutions are to set Default Status Settings to Watching or All Anime, check or uncheck tags (make sure you save afterwards):
+http://myanimelist.net/editprofile.php?go=listpreferences
+  
+  
+If your list still has problems you can ask us about it here, or other questions:
+http://myanimelist.net/forum/?topicid=200323
+  
+  
+And you'll find further ways to customize your list here:
+http://myanimelist.net/forum/?topicid=419405
+*/
+
+/* TOP MENU BUTTONS */
+/* FOR ANIME LIST */
+#mal\_cs_links div:last-of-type a:first-of-type { display: none; } /* DISABLE ANIMELIST BUTTON */
+
+/* FOR MANGA LIST */
+/* #mal\_cs_links div:last-of-type a:last-of-type { display: none; } */ /* DISABLE MANGALIST BUTTON */
+
+body {
+	background-image: url(https://i.imgur.com/cWadi3e.jpg);
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: 'Crimson Text', serif;
+	font-size: 14px;
+	color: #ddc38b;
+}
+
+a { color: #ddc38b; text-decoration: none; }
+
+#list_surround {
+background: url(http://i.imgur.com/xtvWgHg.png) no-repeat center 0 !important;
+	margin: 20px auto 5px;
+	padding: 310px 0 2px;
+	width: 690px;
+}
+
+#list_surround br { display:none; }
+
+.td1, .td2 { 
+	color: ##ddc38b; 
+	background-color: rgba(0, 0, 0, .3);
+}
+
+.borderRBL, .borderRBL a  { text-align: center !important; }
+
+.borderRBL {
+	color: #FFFFFF !important; 
+	border-top: solid 1px #ddc38b !important; 
+}
+
+.borderRBL small { visibility: visible !important; }
+
+tr:hover td[class^='td']:not(.borderRBL) {
+	text-shadow: 0 0 10px #FF0;
+	transition: all .5s ease !important;
+	-webkit-transition: all .5s ease !important;
+}
+
+td[class^='td']:first-child, td[class^='td']:last-child { width: 50px !important; }
+
+td[class^='td']:first-child { text-align: left; padding-left: 5px; border-left: double 4px #ddc38b !important; }
+
+td[class^='td']:last-child { text-align: right; padding-right: 5px; border-right: double 4px #ddc38b !important; }
+
+.animetitle + small {
+	visibility: visible !important;
+	text-transform: lowercase;
+	font-size: 13px;
+	color: #e6ca8b;
+	margin-left: 5px;
+}
+
+.animetitle + small:before { content: "/ "; }
+
+/* EDIT-MORE */
+#list_surround small { visibility: hidden; }
+
+#list_surround tr:hover small, #list_surround tr:hover small a { visibility: visible; }
+
+/* HEADERS */
+.header_title {
+	pointer-events: none;
+	display: inline-block;
+	height: 100px;
+}
+
+/* Headers pics */
+.header_cw span, .header_completed span, .header_onhold span, .header_dropped span, .header_ptw span {
+	position: absolute;
+	display: inline-block;
+	width: 730px;
+	height: 78px;
+	margin-left: -20px;
+	margin-top: 22px;
+	font-size: 0;
+	background-image: url(http://i.imgur.com/xApmJde.png);
+	background-repeat: no-repeat;
+	z-index: -1;
+}
+
+.header_cw span { background-position: center 0; }
+
+.header_completed span { background-position: center -78px; }
+
+.header_onhold span { background-position: center -156px; }
+
+.header_dropped span { background-position: center -234px; }
+
+.header_ptw span { background-position: center -312px; }
+
+.category_totals:before {
+	position: absolute;
+	display: block;
+	content: '';
+	background: url(http://i.imgur.com/eTMjl9W.png) no-repeat;
+	width: 730px;
+	height: 78px;
+	margin-left: -20px;
+	margin-top: -20px;
+	z-index: -1;
+}
+
+.category_totals {
+	padding: 20px 0;
+	color: #ddc38b;
+	text-align: center;
+	text-transform: lowercase !important;
+}
+
+#grand_totals { display:none; }
+
+.borderRBL {
+	color: #FFFFFF !important;
+	line-height: 1;
+	background-color: rgba(0, 0, 0, .3) !important;
+}
+
+#copyright:before {
+	display: block;
+	content: 'Designed by Hahaido'; 
+	line-height: 1;
+}
+
+#copyright {
+	color: #fff;
+	height: 15px;
+	padding: 100px 0;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+#copyright a { font-size: 10px; color: #FFFFFF; }
+
+#inlineContent {
+	display: inline !important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1; 
+}
+
+@keyframes sparkle {
+	0% { background-position: 0 0, 0 0; }
+	100% { background-position: -150px -300px, 150px -300px; }
+}
+ 
+@-webkit-keyframes sparkle {
+	0% { background-position: 0 0, 0 0; }
+	100% { background-position: -150px -300px, 150px -300px; }
+}
+
+#inlineContent:before {
+	position: fixed;
+	display: block;
+	content: '';
+	left: 50%;
+	bottom: 0;
+	margin-left: -40%;
+	width: 80%;
+	height: 100%;
+	background-image: url(http://i.imgur.com/sWW0xCu.png),
+				         url(http://i.imgur.com/KzNIhqF.png);
+	border-radius: 50em;
+	animation: sparkle 15s linear infinite;
+	-webkit-animation: sparkle 15s linear infinite;
+}
+
